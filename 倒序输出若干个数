@@ -1,0 +1,32 @@
+//倒序输出若干个数
+
+//方法一 利用字符串类型的szie()函数来判断个数 
+#include <iostream>
+#include<string>
+using namespace std;
+string s;
+int main()
+{
+	cin>>s;
+	for(int i=s.size()-1;i>=0;i--)	//s.size()-1防止溢出 
+	{
+	cout<<s[i]-'0';//s[i]-'0'是将char类型快速转换为int的写法 
+	}
+	return 0;
+}
+
+//方法二 输入读入n 
+#include<iostream>
+#define maxn 105
+int a[maxn];
+using namespace std;
+int main()
+{
+	int x,n=0;
+	while(scanf("%d",&x)==1)//判断输入的数字个数是否为1 
+	a[n++]=x;//a[n]=x;n=n+1;  将数字放入数组,再放下一个数 
+	for(int i=n-1;i>=0;i--)	printf("%d",a[i]);
+}
+//输入注意
+//1.不要123,要1 2 3,不然会只认为输入了一个数字,没空格,导致123不能倒序.
+//输入后要在末尾加上eof大小写均可,表示文件结束
